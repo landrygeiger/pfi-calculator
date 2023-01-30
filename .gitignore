@@ -1,3 +1,5 @@
 /data
 /pfi
+/__pycache__
 .env
+*.csv
