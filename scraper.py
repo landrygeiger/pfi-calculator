@@ -6,7 +6,7 @@ import os
 import csv
 
 # CHANGE TO DESIRED OUTPUT LOCATION
-OUTPUT_FILE = './data/messages.csv'
+OUTPUT_FILE = './data/megachat-messages.csv'
 
 dotenv.load_dotenv()
 
@@ -26,10 +26,10 @@ def json_list_to_csv(json_list, output_dir, do_header):
           writer.writeheader()
 
         for json_obj in json_list:
-            likes = len(json_obj['favorited_by'])
-            json_obj = {k: str(v).replace(",", "").replace("\n", "").replace("\t", "").replace("\r", "") for k, v in json_obj.items() if not k == 'event'}
-            json_obj['likes'] = likes
-            writer.writerow(json_obj)
+          likes = len(json_obj['favorited_by'])
+          json_obj = {k: str(v).replace(",", "").replace("\n", "").replace("\t", "").replace("\r", "") for k, v in json_obj.items() if not k == 'event'}
+          json_obj['likes'] = likes
+          writer.writerow(json_obj)
 
 def write_next_messages(get_messages_before=0):
   if get_messages_before:
@@ -45,7 +45,8 @@ def write_next_messages(get_messages_before=0):
   return res_messages[-1]['id'], len(res_messages)
 
 if __name__ == '__main__':
-  os.remove(OUTPUT_FILE)
+  if os.path.exists(OUTPUT_FILE):
+    os.remove(OUTPUT_FILE)
   
   last_id, messages_written = write_next_messages()
   i = MESSAGES_PER_REQUEST 
