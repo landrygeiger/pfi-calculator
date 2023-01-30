@@ -4,8 +4,7 @@
 import requests
 import dotenv
 import os
-
-OUTPUT_FILE = './data/groups.txt'
+import sys
 
 dotenv.load_dotenv()
 
@@ -17,7 +16,9 @@ URL = f'https://api.groupme.com/v3/groups?token={ACCESS_TOKEN}'
 if __name__ == '__main__':
   res = requests.get(URL)
   res_obj = res.json()['response']
+
+  output_file = sys.argv[1]
   
-  with open(OUTPUT_FILE, 'w') as f:
+  with open(output_file, 'w') as f:
     for group in res_obj:
       f.write(group['name'] + ': ' + group['group_id'] + '\n')
