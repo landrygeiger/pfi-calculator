@@ -8,7 +8,7 @@ First, clone the repo and create a `.env` file in the root directory. We will us
 
 ### Obtaining an Access Token
 
-To use the tool, you will first need a GroupMe API access token. To obtain an access token, navigate to https://dev.groupme.com/ and create an account. Next, create an application. Your access token can then be found by clicking "Accesss Token" on the site's navigation bar.
+To use the tool, you will first need a GroupMe API access token. To obtain an access token, navigate to https://dev.groupme.com/ and sign into your account. Next, create an application. Your access token can then be found by clicking "Accesss Token" on the site's navigation bar.
 
 Finally, open the `.env` file and paste in the following line but replace `[your_token_here]` with your access token.
 
@@ -18,7 +18,7 @@ ACCESS_TOKEN=[your_token_here]
 
 ### Finding the Group ID
 
-To view the IDs of all groups you are in, you can run the `group-puller.py` script.
+To view the IDs of all groups you are in, you can run the `group-puller.py` script with the only argument being the output file.
 
 ### Executing the Tool
 
