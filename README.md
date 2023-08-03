@@ -4,7 +4,7 @@ The PFI (Present Funny Index), calculated as a function of a GroupMe user's stat
 
 ## How to Use
 
-First, clone the repo and create a `.env` file in the root directory. We will use this file later. The FPI calculator is a collection of Python scripts. If you do not have Python installed, you can download the latest version from https://www.python.org/.
+First, clone the repo and create a `.env` file in the root directory. We will use this file later. The PFI calculator is a collection of Python scripts. If you do not have Python installed, you can download the latest version from https://www.python.org/.
 
 ### Obtaining an Access Token
 
